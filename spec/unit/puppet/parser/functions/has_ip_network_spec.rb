@@ -8,7 +8,8 @@ describe Puppet::Parser::Functions.function(:has_ip_network) do
   end
 
   subject do
-    scope.method :function_has_ip_network
+    function_name = Puppet::Parser::Functions.function(:has_ip_network)
+    scope.method(function_name)
   end
 
   context "On Linux Systems" do

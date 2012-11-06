@@ -9,7 +9,8 @@ describe Puppet::Parser::Functions.function(:has_interface_with) do
 
   # The subject of these examples is the method itself.
   subject do
-    scope.method :function_has_interface_with
+    function_name = Puppet::Parser::Functions.function(:has_interface_with)
+    scope.method(function_name)
   end
 
   # We need to mock out the Facts so we can specify how we expect this function
